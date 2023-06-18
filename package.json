@@ -1,10 +1,10 @@
 {
-  "name": "@nekogd/react-hook-npm-publish-boilerplate",
-  "version": "0.0.0",
-  "description": "Modular utility hooks that we often use grouped in one package. Written in TypeScript, documented, tested and maintained.Disclaimer: at least React 16 is needed (the one with hooks ;) )",
-  "author": "nekogd",
+  "name": "react-optimized-effects",
+  "version": "1.0.0",
+  "description": "This React package optimizes the usage of useEffect, eliminating unnecessary re-renders, and efficiently handling multiple API calls. It analyzes dependencies to trigger effects only when needed, ensuring optimal performance. Prevent redundant network requests and enhance the responsiveness of your React application with ease. Install React-Optimized-Effects now for streamlined useEffects and improved efficiency.",
+  "author": "Mohamed Bahrawy",
   "license": "Apache-2.0",
-  "repository": "nekogd/react-hook-npm-publish-boilerplate",
+  "repository": "https://github.com/mBahrawy/react-optimized-effects",
   "main": "dist/index.js",
   "engines": {
     "node": ">=8",
@@ -57,8 +57,12 @@
   ],
   "keywords": [
     "react",
+    "useEffect",
+    "optimize rerender",
     "react hooks",
     "typescript",
+    "callback",
+    "optimization",
     "npm"
   ],
   "dependencies": {

@@ -1,161 +1,49 @@
-# React Hooks to npm boilerplate
+# React optimized effects, A very efficient component life-cycle hook.
 
-This repository is a boilerplate for creating custom React hooks and components that we can publish to NPM registry as packages.
+This React package optimizes the usage of useEffect, eliminating unnecessary re-renders, and efficiently handling multiple API calls. It analyzes dependencies to trigger effects only when needed, ensuring optimal performance. Prevent redundant network requests and enhance the responsiveness of your React application with ease. Install React-Optimized-Effects now for streamlined useEffects and improved efficiency.
 
-I've put together a quick tutorial, it assumes an understanding of React, hooks and unit tests.
+## Package contents/life-cycle hook:
 
-If something is not clear, message me or raise an issue, I will explain in more detail.
+| Life-cycle hook | description                                                            |
+| --------------- | ---------------------------------------------------------------------- |
+| useOnint        | Will fire only once the component loads, no depenecies.                |
+| useOnChage      | Will fire only once the component loads or after a dependcies changed. |
+| useOnDistry     | Coming soon in the next version.                                       |
 
-I've used this boilerplate to create my NPM package [https://www.npmjs.com/package/@nekogd/react-utility-hooks].
+## Key Features of React-Optimized-Effects:
 
-## First things first
+1. Dependency Analysis: React-Optimized-Effects examines the dependencies of your useEffect hooks and ensures that they are executed only when the relevant dependencies change, avoiding unnecessary re-renders, It can analayis any type of dependencies however it's primitive type or reference type.
 
-Firstly, clone this repository. 
+2. Intelligent API Call Handling: With React-Optimized-Effects, you can prevent multiple API calls triggered by different useEffect hooks. It intelligently manages the requests, preventing redundant calls and optimizing network utilization.
 
-Next, go over to package.json file and amend name, description and author keys.
+3. Seamless Integration: React-Optimized-Effects seamlessly integrates with your existing React codebase. Its API mirrors the useEffect hook, allowing for easy adoption and integration into your components.
 
-The package would be served on npm as per what you have typed in the "name".
+## Installation:
 
-You may want to use scoped naming i.e. "@myscope/use-my-hook"
+1. Open your React app directory
+2. Open termial or CMD
+3. install the library by this command : `npm i react-optimized-effects`
 
-More info: [https://docs.npmjs.com/using-npm/scope.html]
-
-## How we will be able to use your package
-
-It follows the common React path.
-
-Follow through the included useCounter example and you will be fine.
-
-Make sure to export your hook (I prefer named exports) in index.ts.
-
-Basically you have to do three things:
-
-a) write your hook (preferably test and type it)
-
-b) export it in index.ts file
-
-c) deploy to NPM
-
-We will able to use your hook like so:
+## Example
 
 ```
- import { useYourHook } from 'your-package-name'
-```
+import { useOnInit, useOnChange } from "react-optimized-effects";
 
-## Development commands
+function ExampleComponent() {
 
-```
- // watch
- yarn start
+  useOnInit(() => {
+    // Your API call code here
+    // This effect will prevent redundant API calls when multiple components use it
+  });
 
- // or
- npm run start
-```
+  useOnChange(() => {
+    // Your effect code here
+    // This effect will only trigger when the dependencies change
+  }, [dependency1, dependency2]);
 
-```
- // builds the dist folder
- yarn build
-
- // or
- npm run build
-```
+  return (
+    // Your component JSX here
+  );
+}
 
 ```
- // starts tests
- yarn test
-
- // or
-
- npm run test
-```
-
-## Local testing and yarn link
-
-To locally test the package, do the following:
-
-Let's assume your package name is "use-my-counter" and your CRA is "my-app".
-
-Let's also assume they are in one workspace.
-
-```
-workspace
-  - use-my-counter
-  - my-app
-```
-
-a) in hook folder, run
-```
-yarn link
-```
-b) assuming you have a workspace, create a sample CRA app 
-```
-npx create-react-app my-app
-```
-c) navigate to your CRA app folder
-```
-cd my-app
-```
-d) run command
-```
- yarn link use-my-counter
-```
-e)  In your CRA app, you can now user package, as it's linked locally 
-```
-  import { useMyCounter } from 'use-my-counter';
-```
-
-f) However, this will give you an error due to different copy of React and in CRA app. 
-   To counter that let's assume that we have workspace
-```
-workspace
-  - use-my-counter
-  - my-app
-```
-  We navigate to use-my-counter and type (this will link the React versions locally). 
-  
-  Please amend the path to your needs.
-  ```
-   npm link ../my-app/node_modules/react
-  ```
-  We should be good to go to work locally. 
-
-## Deployment to NPM
-
-### Login to correct NPM account
-
-```
-npm login
-```
-
-### Versioning
-
-Increase the version number as per NPM guides [https://docs.npmjs.com/about-semantic-versioning].
-
-```
-// increases the first digit i.e. from 0.5.4 to 1.0.0
-npm version major
-
-// increases the second digit i.e. from 0.0.3 to 0.1.0
-npm version minor
-
-// increases the third digit i.e. from 0.0.1 to 0.0.2
-npm version patch
-```
-
-### Deployment
-
-Run the command and the package should be up.
-
-```
-npm publish --access public
-```
-
-### What If I want to export a component? 
-
-You can do that too, following same pattern as you'd with hooks.
-
-Bear in mind you'd propably need .tsx file and not .ts.
-
-### Share with the world
-
-Share your work and learnings with the world! :)
