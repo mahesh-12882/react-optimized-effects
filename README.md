@@ -4,12 +4,12 @@ This React package optimizes the usage of useEffect, eliminating unnecessary re-
 
 ### Package contents/life-cycle hook:
 
-| Life-cycle Hook  | Description                                                                                                                                                                                                                                                                                                           |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| useOnint         | This effect will be fired only once the component loads, with no dependencies.                                                                                                                                                                                                                                        |
-| useOnChage       | This effect will be fired only once the component loads or after any dependency is changed.                                                                                                                                                                                                                           |
-| useOnDistroy     | This effect will be fired only after the component is fully unmounted/destroyed.                                                                                                                                                                                                                                      |
-| useOnDistroySync | Similar to "useOnDistroy", this Hook allows you to perform side effects that require access to the DOM immediately after the browser has finished rendering and before the screen is painted. It is similar to useEffect, but it runs synchronously after all DOM mutations are complete, eg: scroll based animations |
+| Life-cycle Hook  | Description                                                                                                                                                                                                                                                                                     |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| useOnInit        | This effect will be fired only once the component loads, with no dependencies.                                                                                                                                                                                                                  |
+| useOnChange      | This effect will be fired only once the component loads or after any dependency is changed.                                                                                                                                                                                                     |
+| useOnDistroy     | This effect will be fired only after the component is fully unmounted/destroyed.                                                                                                                                                                                                                |
+| useOnDistroySync | This Hook allows you to perform side effects that require access to the DOM immediately after the browser has finished rendering and before the screen is painted. It is similar to "useOnDistroy", but it runs synchronously after all DOM mutations are complete, eg: scroll based animations |
 
 ### Key Features of React-Optimized-Effects:
 
@@ -25,15 +25,14 @@ This React package optimizes the usage of useEffect, eliminating unnecessary re-
 2. Open terminal or CMD
 3. Install the library by this command: `npm i react-optimized-effects`
 
-
 ### The acutaul arrange for these life-cycle hooks:
+
 **If the 4 hooks are implmemnted the arrange must be like this**
 
 1. useOnInit, useOnChange (Not changed dependencies)
 2. useOnChange (After change dependencies)
 3. useOnDistroySync
 4. useOnDistroy
-
 
 ### Example
 
