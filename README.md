@@ -2,7 +2,7 @@
 
 This React package optimizes the usage of useEffect, eliminating unnecessary re-renders, and efficiently handling multiple API calls. It analyzes dependencies to trigger effects only when needed, ensuring optimal performance. Prevent redundant network requests and enhance the responsiveness of your React application with ease. Install React-Optimized-Effects now for streamlined useEffects and improved efficiency.
 
-## Package contents/life-cycle hook:
+### Package contents/life-cycle hook:
 
 | Life-cycle hook | description                                                            |
 | --------------- | ---------------------------------------------------------------------- |
@@ -10,7 +10,7 @@ This React package optimizes the usage of useEffect, eliminating unnecessary re-
 | useOnChage      | Will fire only once the component loads or after a dependcies changed. |
 | useOnDistry     | Coming soon in the next version.                                       |
 
-## Key Features of React-Optimized-Effects:
+### Key Features of React-Optimized-Effects:
 
 1. Dependency Analysis: React-Optimized-Effects examines the dependencies of your useEffect hooks and ensures that they are executed only when the relevant dependencies change, avoiding unnecessary re-renders, It can analayis any type of dependencies however it's primitive type or reference type.
 
@@ -18,13 +18,13 @@ This React package optimizes the usage of useEffect, eliminating unnecessary re-
 
 3. Seamless Integration: React-Optimized-Effects seamlessly integrates with your existing React codebase. Its API mirrors the useEffect hook, allowing for easy adoption and integration into your components.
 
-## Installation:
+### Installation:
 
 1. Open your React app directory
 2. Open termial or CMD
-3. install the library by this command : `npm i react-optimized-effects`
+3. Install the library by this command : `npm i react-optimized-effects`
 
-## Example
+### Example
 
 ```
 import { useOnInit, useOnChange } from "react-optimized-effects";
