@@ -1,18 +1,19 @@
-# React optimized effects, A very efficient component life-cycle hook.
+## React optimized effects, A very efficient component life-cycle hook.
 
 This React package optimizes the usage of useEffect, eliminating unnecessary re-renders, and efficiently handling multiple API calls. It analyzes dependencies to trigger effects only when needed, ensuring optimal performance. Prevent redundant network requests and enhance the responsiveness of your React application with ease. Install React-Optimized-Effects now for streamlined useEffects and improved efficiency.
 
 ### Package contents/life-cycle hook:
 
-| Life-cycle hook | description                                                            |
-| --------------- | ---------------------------------------------------------------------- |
-| useOnint        | Will fire only once the component loads, no depenecies.                |
-| useOnChage      | Will fire only once the component loads or after a dependcies changed. |
-| useOnDistry     | Coming soon in the next version.                                       |
+| Life-cycle Hook  | Description                                                                                                                                                                                                                                                                                                           |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| useOnint         | This effect will be fired only once the component loads, with no dependencies.                                                                                                                                                                                                                                        |
+| useOnChage       | This effect will be fired only once the component loads or after any dependency is changed.                                                                                                                                                                                                                           |
+| useOnDistroy     | This effect will be fired only after the component is fully unmounted/destroyed.                                                                                                                                                                                                                                      |
+| useOnDistroySync | Similar to "useOnDistroy", this Hook allows you to perform side effects that require access to the DOM immediately after the browser has finished rendering and before the screen is painted. It is similar to useEffect, but it runs synchronously after all DOM mutations are complete, eg: scroll based animations |
 
 ### Key Features of React-Optimized-Effects:
 
-1. Dependency Analysis: React-Optimized-Effects examines the dependencies of your useEffect hooks and ensures that they are executed only when the relevant dependencies change, avoiding unnecessary re-renders, It can analayis any type of dependencies however it's primitive type or reference type.
+1. Dependency Analysis: React-Optimized-Effects examines the dependencies of your useEffect hooks and ensures that they are executed only when the relevant dependencies change, avoiding unnecessary re-renders, It can analyze any type of dependency however it's a primitive type or reference type.
 
 2. Intelligent API Call Handling: With React-Optimized-Effects, you can prevent multiple API calls triggered by different useEffect hooks. It intelligently manages the requests, preventing redundant calls and optimizing network utilization.
 
@@ -21,8 +22,18 @@ This React package optimizes the usage of useEffect, eliminating unnecessary re-
 ### Installation:
 
 1. Open your React app directory
-2. Open termial or CMD
-3. Install the library by this command : `npm i react-optimized-effects`
+2. Open terminal or CMD
+3. Install the library by this command: `npm i react-optimized-effects`
+
+
+### The acutaul arrange for these life-cycle hooks:
+**If the 4 hooks are implmemnted the arrange must be like this**
+
+1. useOnInit, useOnChange (Not changed dependencies)
+2. useOnChange (After change dependencies)
+3. useOnDistroySync
+4. useOnDistroy
+
 
 ### Example
 
@@ -33,13 +44,28 @@ function ExampleComponent() {
 
   useOnInit(() => {
     // Your API call code here
-    // This effect will prevent redundant API calls when multiple components use it
+    // This effect will be fired only once the component loads, with no dependencies.
   });
 
   useOnChange(() => {
     // Your effect code here
-    // This effect will only trigger when the dependencies change
+    // This effect will be fired only once the component loads or after any dependency is changed.
   }, [dependency1, dependency2]);
+
+
+  useOnDistroy(() => {
+    // Your API call code here
+    // This effect will be fired only after the component is fully unmounted/destroyed.
+   });
+
+  useOnDistroySync(() => {
+    // Your API call code here
+    // Similar to "useOnDistroy", this Hook allows you to perform side effects
+    // that require access to the DOM immediately after the browser has finished rendering
+    // and before the screen is painted. It is similar to useEffect,
+    // but it runs synchronously after all DOM mutations are complete, eg: scroll based animations
+  });
+
 
   return (
     // Your component JSX here
