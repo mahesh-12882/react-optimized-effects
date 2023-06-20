@@ -8,7 +8,7 @@ This React package optimizes the usage of useEffect, eliminating unnecessary re-
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | useOnInit        | This effect will be fired only once the component loads, with no dependencies.                                                                                                                                                                                                                  |
 | useOnChange      | This effect will be fired only once the component loads or after any dependency is changed.                                                                                                                                                                                                     |
-| useOnDistroy     | This effect will be fired only after the component is fully unmounted/destroyed.                                                                                                                                                                                                                |
+| useOnDistroy     | This effect will be fired only once and after the component is fully unmounted/destroyed.                                                                                                                                                                                                                |
 
 ### Key Features of React-Optimized-Effects:
 
