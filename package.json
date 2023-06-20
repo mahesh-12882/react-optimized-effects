@@ -1,6 +1,6 @@
 {
   "name": "react-optimized-effects",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "This React package optimizes the usage of useEffect, eliminating unnecessary re-renders, and efficiently handling multiple API calls. It analyzes dependencies to trigger effects only when needed, ensuring optimal performance. Prevent redundant network requests and enhance the responsiveness of your React application with ease. Install React-Optimized-Effects now for streamlined useEffects and improved efficiency.",
   "author": "Mohamed Bahrawy",
   "license": "Apache",
