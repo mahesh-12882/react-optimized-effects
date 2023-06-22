@@ -6,10 +6,9 @@ This React package optimizes the usage of useEffect, eliminating unnecessary re-
 
 | Life-cycle Hook  | Description                                                                                                                                                                                                                                                                                     |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| useOnInit        | This effect will be fired only once the component loads, with no dependencies.                                                                                                                                                                                                                  |
-| useOnChange      | This effect will be fired only once the component loads or after any dependency is changed.                                                                                                                                                                                                     |
-| useOnDistroy     | This effect will be fired only after the component is fully unmounted/destroyed.                                                                                                                                                                                                                |
-| useOnDistroySync | This Hook allows you to perform side effects that require access to the DOM immediately after the browser has finished rendering and before the screen is painted. It is similar to "useOnDistroy", but it runs synchronously after all DOM mutations are complete, eg: scroll based animations |
+| useOnInit        | This effect will be called only one time once the component loads, with no dependencies.                                                                                                                                                                                                                  |
+| useOnChange      | This effect will be called only one time once the component loads or after any dependency is changed.                                                                                                                                                                                                     |
+| useOnDistroy     | This effect will be called only one time just after the component is fully unmounted/destroyed.                                                                                                                                                                                                                |
 
 ### Key Features of React-Optimized-Effects:
 
@@ -31,7 +30,6 @@ This React package optimizes the usage of useEffect, eliminating unnecessary re-
 
 1. useOnInit, useOnChange (Not changed dependencies)
 2. useOnChange (After change dependencies)
-3. useOnDistroySync
 4. useOnDistroy
 
 ### Example
@@ -56,15 +54,6 @@ function ExampleComponent() {
     // Your API call code here
     // This effect will be fired only after the component is fully unmounted/destroyed.
    });
-
-  useOnDistroySync(() => {
-    // Your API call code here
-    // Similar to "useOnDistroy", this Hook allows you to perform side effects
-    // that require access to the DOM immediately after the browser has finished rendering
-    // and before the screen is painted. It is similar to useEffect,
-    // but it runs synchronously after all DOM mutations are complete, eg: scroll based animations
-  });
-
 
   return (
     // Your component JSX here
