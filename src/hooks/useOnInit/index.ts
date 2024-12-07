@@ -33,6 +33,7 @@ export const useOnInit = (callback: () => void): void => {
       renderCounter.current++;
       return callback && callback();
     }
+    //increse corrent value
     renderCounter.current++;
     // Defualt return
     return () => {};
